@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Aeonik";
-  src: url("/assets/fonts/aeonik-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/Aeonik-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Migra";
-  src: url("/assets/fonts/migraItalic.woff2") format("woff2");
+  src: url("/assets/fonts/MigraItalic.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -18,14 +18,14 @@
 
 @font-face {
   font-family: "Grifinito";
-  src: url("/assets/fonts/grifinitoL.woff2") format("woff2");
+  src: url("/assets/fonts/GrifinitoL.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Canopee";
-  src: url("/assets/fonts/canopee.woff2") format("woff2");
+  src: url("/assets/fonts/Canopee.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Necosmic";
-  src: url("/assets/fonts/necosmic.otf") format("opentype");
+  src: url("/assets/fonts/Necosmic.otf") format("openType");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -43,7 +43,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: "0.4s color background stroke";
+  transition:
+    color 0.4s,
+    background 0.4s,
+    stroke 0.4s;
 }
 
 :root {
@@ -91,4 +94,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
 }
