@@ -33,7 +33,7 @@
 
 @font-face {
   font-family: "Necosmic";
-  src: url("/assets/fonts/Necosmic.otf") format("openType");
+  src: url("/assets/fonts/Necosmic.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -46,7 +46,8 @@
   transition:
     color 0.4s,
     background 0.4s,
-    stroke 0.4s;
+    stroke 0.4s,
+    fill 0.4s;
 }
 
 :root {
@@ -66,6 +67,7 @@
   --normal-size: 1rem;
   --mid-size: 1.875rem;
   --large-size: 2.5rem;
+  --fifty-size: 3.125rem;
   --extra-large-size: 3.75rem;
   --hero-size: 6.25rem;
 }

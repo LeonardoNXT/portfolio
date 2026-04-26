@@ -311,7 +311,7 @@ function Gradient() {
 
 function Conteiner({ children }: ConteinerPropsType) {
   return (
-    <div className="w-full h-screen absolute top-0 left-0 pointer-events-none">
+    <div className="w-full h-screen absolute top-0 left-0 pointer-events-none saturate-50">
       {children}
     </div>
   );

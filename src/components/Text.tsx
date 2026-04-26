@@ -5,7 +5,8 @@ type TextPropsType = {
     | "mid-size"
     | "large-size"
     | "extra-large-size"
-    | "hero-size";
+    | "hero-size"
+    | "fifty-size";
   className?: string;
   style?: React.CSSProperties;
   type?: "h1" | "p" | "span";
@@ -25,6 +26,7 @@ const sizeClasses = {
   "large-size": "text-[length:var(--large-size)]",
   "extra-large-size": "text-[length:var(--extra-large-size)]",
   "hero-size": "text-[length:var(--hero-size)]",
+  "fifty-size": "text-[length:var(--fifty-size)]",
 };
 
 export default function Text({

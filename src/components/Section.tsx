@@ -4,7 +4,7 @@ type SectionPropsType = {
   children: React.ReactNode;
 };
 
-function Element({ classname, children, ...style }: SectionPropsType) {
+function Element({ classname = "", children, ...style }: SectionPropsType) {
   return (
     <section className={"w-full relative" + " " + classname} {...style}>
       {children}
