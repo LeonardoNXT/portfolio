@@ -1,43 +1,6 @@
+@import "./typography.css";
+@import "./animation.css";
 @import "tailwindcss";
-
-@font-face {
-  font-family: "Aeonik";
-  src: url("/assets/fonts/Aeonik-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Migra";
-  src: url("/assets/fonts/MigraItalic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Grifinito";
-  src: url("/assets/fonts/GrifinitoL.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Canopee";
-  src: url("/assets/fonts/Canopee.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Necosmic";
-  src: url("/assets/fonts/Necosmic.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 * {
   margin: 0;

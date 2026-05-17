@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Aeonik";
+  src: url("/assets/fonts/aeonik-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Migra";
+  src: url("/assets/fonts/migraItalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grifinito";
+  src: url("/assets/fonts/grifinitoL.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Canopee";
+  src: url("/assets/fonts/canopee.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Necosmic";
+  src: url("/assets/fonts/necosmic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

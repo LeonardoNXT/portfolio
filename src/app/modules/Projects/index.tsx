@@ -1,26 +1,44 @@
-import Background from "@/components/Background";
 import GradientOpacity from "@/components/GradientOpacity";
 import Grid from "@/components/Grid";
-import { RoundedBorder } from "@/components/RoundedBorder";
 import Section from "@/components/Section";
-import Text from "@/components/Text";
-import ProjectHeader from "./ProjectHeader";
+import ProjectHeader from "./ProjectsHeader";
 import Divisor from "@/components/Divisor";
+import ProjectsDescription from "./ProjectsDescription";
+import ProjectsCarousel from "./ProjectsCarousel";
+import ProjectsList from "./ProjectsList";
+import { useRef } from "react";
+import useAnimation from "@/hooks/useAnimation";
+import { ProjectsAnimation } from "./animation";
 
 export default function Projects() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useAnimation(
+    (context) => {
+      const Animation = new ProjectsAnimation({
+        context,
+        ref: sectionRef,
+      });
+
+      Animation.Header();
+      Animation.Description();
+      Animation.Carousel();
+    },
+    { scope: sectionRef, revertOnUpdate: true },
+  );
+
   return (
-    <Section.Element>
+    <Section.Element ref={sectionRef}>
       <Grid className="border-(--primary-grid-color)" />
       <GradientOpacity color="background" position="top" className="z-10" />
       <Section.Conteiner>
         <ProjectHeader />
         <Divisor color="primary-grid-color" />
-        <div className="p-15! w-1/2">
-          <Text size="fifty-size" font="font-aeonik">
-            A scalable platform for real-time emotional insights.
-          </Text>
-        </div>
+        <ProjectsDescription />
         <Divisor color="primary-grid-color" />
+        <ProjectsCarousel />
+        <Divisor color="primary-grid-color" />
+        <ProjectsList />
       </Section.Conteiner>
     </Section.Element>
   );

@@ -5,11 +5,15 @@ export default function ThirdTopic() {
   return (
     <NormalizedTopic
       resume="This is where it takes form."
+      identificator={{
+        resume: "third-resume",
+        subTitle: "third-subTitle",
+      }}
       title={
         <Text
           font="font-aeonik"
           size="extra-large-size"
-          className="text-background pl-50!"
+          className="text-background pl-50! third-title"
         >
           I work primarily with JavaScript and{" "}
           <Text type="span" size="extra-large-size" font="font-migra">

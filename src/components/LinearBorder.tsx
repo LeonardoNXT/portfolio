@@ -15,7 +15,7 @@ export function LinearBorder({
       width={size}
       height={size}
       className={className}
-      viewBox={`0 0 ${size} ${size}`}
+      viewBox="0 0 200 200"
       fill="none"
     >
       <path d="M0 0H200L102 97L0 200V0Z" className={pathclassName} />

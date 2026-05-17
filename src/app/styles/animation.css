@@ -1,0 +1,15 @@
+.welcome-to .chars {
+  opacity: 0;
+}
+
+.lines {
+  overflow: hidden;
+  height: max-content;
+}
+
+.words {
+  text-wrap: nowrap;
+}
+.span-text {
+  text-align: end;
+}

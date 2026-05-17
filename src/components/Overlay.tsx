@@ -22,7 +22,7 @@ function Lines() {
 
 function OverlayBorder() {
   return (
-    <div className="w-full min-h-screen h-full z-50 fixed top-0 left-0 pointer-events-none">
+    <div className="w-screen min-h-screen h-full z-50 fixed top-0 left-0 pointer-events-none">
       <Lines />
       <Borders />
     </div>

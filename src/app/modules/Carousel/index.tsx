@@ -2,6 +2,9 @@ import GradientOpacity from "@/components/GradientOpacity";
 import Grid from "@/components/Grid";
 import Section from "@/components/Section";
 import Text from "@/components/Text";
+import useAnimation from "@/hooks/useAnimation";
+import { useRef } from "react";
+import { CarouselAnimation } from "./animation";
 
 function CarouselItems() {
   return (
@@ -22,14 +25,30 @@ function CarouselItems() {
 }
 
 export default function Carousel() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  useAnimation(
+    (context) => {
+      const Animation = new CarouselAnimation({
+        context: context,
+        ref: sectionRef,
+      });
+      Animation.List();
+    },
+    {
+      scope: sectionRef,
+      revertOnUpdate: true,
+    },
+  );
+
   return (
-    <Section.Element>
+    <Section.Element ref={sectionRef}>
       <Grid className="border-(--primary-grid-color)" />
       <GradientOpacity position="top" className="z-20" />
       <GradientOpacity position="bottom" className="z-20" />
-      <Section.Conteiner classname="h-screen overflow-hidden">
+      <Section.Conteiner classname="h-screen overflow-hidden relative">
         <Text className="absolute top-10 left-10">AREAS I FOCUS ON</Text>
-        <div className="w-full h-full flex flex-col items-center">
+        <div className="w-full h-max flex flex-col items-center absolute bottom-0 carousel">
           <CarouselItems />
         </div>
       </Section.Conteiner>
