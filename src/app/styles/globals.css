@@ -1,43 +1,6 @@
+@import "./typography.css";
+@import "./animation.css";
 @import "tailwindcss";
-
-@font-face {
-  font-family: "Aeonik";
-  src: url("/assets/fonts/Aeonik-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Migra";
-  src: url("/assets/fonts/MigraItalic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Grifinito";
-  src: url("/assets/fonts/GrifinitoL.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Canopee";
-  src: url("/assets/fonts/Canopee.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Necosmic";
-  src: url("/assets/fonts/Necosmic.otf") format("openType");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 * {
   margin: 0;
@@ -46,7 +9,8 @@
   transition:
     color 0.4s,
     background 0.4s,
-    stroke 0.4s;
+    stroke 0.4s,
+    fill 0.4s;
 }
 
 :root {
@@ -66,6 +30,7 @@
   --normal-size: 1rem;
   --mid-size: 1.875rem;
   --large-size: 2.5rem;
+  --fifty-size: 3.125rem;
   --extra-large-size: 3.75rem;
   --hero-size: 6.25rem;
 }

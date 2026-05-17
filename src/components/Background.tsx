@@ -282,10 +282,10 @@ function Gradient() {
   return (
     <div className="absolute z-1 top-0 left-0 w-full h-full">
       <Grainient
-        color1="#303030"
-        color2="#84CC16"
-        color3="#ffbdb6"
-        timeSpeed={2.35}
+        color1="#000000"
+        color2="#fea86c"
+        color3="#592727"
+        timeSpeed={1.35}
         colorBalance={0}
         warpStrength={1}
         warpFrequency={5}
@@ -311,7 +311,7 @@ function Gradient() {
 
 function Conteiner({ children }: ConteinerPropsType) {
   return (
-    <div className="w-full h-screen absolute top-0 left-0 pointer-events-none">
+    <div className="w-full h-screen absolute top-0 left-0 pointer-events-none saturate-50">
       {children}
     </div>
   );
