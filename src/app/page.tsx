@@ -1,23 +1,24 @@
 "use client";
 
-import { MouseProvider } from "@/context/mouse/mouse.provider";
+import About from "./modules/About";
+import Carousel from "./modules/Carousel";
 import Home from "./modules/Home";
-import Overlay from "@/components/Overlay";
-import Header from "@/components/Header";
+import Philosophy from "./modules/Philosophy";
+import AppProvider from "@/context/app/app.provider";
+import Projects from "./modules/Projects";
+import Footer from "./modules/Footer";
 
 export default function App() {
   return (
-    <MouseProvider>
-      <Overlay.root>
-        <Overlay.border />
-        <Header.Conteiner>
-          <Header.Notch />
-          <Header.Nav />
-        </Header.Conteiner>
-        <main>
-          <Home />
-        </main>
-      </Overlay.root>
-    </MouseProvider>
+    <AppProvider>
+      <main className="max-w-[100vw] overflow-hidden">
+        <Home />
+        <Philosophy />
+        <Carousel />
+        <About />
+        <Projects />
+        <Footer />
+      </main>
+    </AppProvider>
   );
 }

@@ -1,47 +1,72 @@
-type TextPropsType = {
-  size?:
-    | "small-size"
-    | "normal-size"
-    | "mid-size"
-    | "large-size"
-    | "extra-large-size"
-    | "hero-size";
-  className?: string;
-  style?: React.StyleHTMLAttributes<HTMLParagraphElement>;
-  type?: "h1" | "p" | "span";
-  font?:
-    | "font-aeonik"
-    | "font-necosmic"
-    | "font-migra"
-    | "font-grifinito"
-    | "font-canopee";
-  children: string;
+import {
+  CSSProperties,
+  ReactNode,
+  ElementType,
+  ComponentPropsWithoutRef,
+  Ref,
+} from "react";
+
+type Size =
+  | "small-size"
+  | "normal-size"
+  | "mid-size"
+  | "large-size"
+  | "extra-large-size"
+  | "hero-size"
+  | "fifty-size";
+
+type Font =
+  | "font-aeonik"
+  | "font-necosmic"
+  | "font-migra"
+  | "font-grifinito"
+  | "font-canopee";
+
+const sizeClasses: Record<Size, string> = {
+  "small-size": "text-[length:var(--small-size)]",
+  "normal-size": "text-[length:var(--normal-size)]",
+  "mid-size": "text-[length:var(--mid-size)]",
+  "large-size": "text-[length:var(--large-size)]",
+  "extra-large-size": "text-[length:var(--extra-large-size)]",
+  "hero-size": "text-[length:var(--hero-size)]",
+  "fifty-size": "text-[length:var(--fifty-size)]",
 };
 
-export default function Text({
+type TextProps<T extends ElementType> = {
+  type?: T;
+  size?: Size;
+  font?: Font;
+  className?: string;
+  style?: CSSProperties;
+  children: ReactNode;
+  titleRef?: Ref<HTMLParagraphElement>;
+} & Omit<
+  ComponentPropsWithoutRef<T>,
+  "as" | "className" | "style" | "children"
+>;
+
+export default function Text<T extends ElementType = "p">({
+  type,
   size = "normal-size",
-  className,
-  style,
   font = "font-aeonik",
-  type = "p",
+  className = "",
+  style,
   children,
-}: TextPropsType) {
-  switch (type) {
-    case "p":
-      return (
-        <p {...style} className={`${font} text-(--${size}) ${className}`}>
-          {children}
-        </p>
-      );
-    case "span":
-      return (
-        <span {...style} className={`${font} text-(--${size}) ${className}`}>
-          {children}
-        </span>
-      );
-    case "h1":
-      <h1 {...style} className={`${font} text-(--${size}) ${className}`}>
-        {children}
-      </h1>;
-  }
+  titleRef,
+  ...rest
+}: TextProps<T>) {
+  const Component = type || "p";
+
+  const combinedClasses = `${font} ${sizeClasses[size]} ${className}`.trim();
+
+  return (
+    <Component
+      ref={titleRef}
+      style={style}
+      className={combinedClasses}
+      {...rest}
+    >
+      {children}
+    </Component>
+  );
 }

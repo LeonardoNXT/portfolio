@@ -1,18 +1,24 @@
 type LinearBorderProps = {
   size?: number;
+  pathclassName?: string;
   className?: string;
 };
 
-export function LinearBorder({ className, size = 32 }: LinearBorderProps) {
+export function LinearBorder({
+  className = "",
+  pathclassName = "",
+  size = 32,
+}: LinearBorderProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      viewBox="0 0 100 100"
+      className={className}
+      viewBox="0 0 200 200"
       fill="none"
     >
-      <path d="M0 0H100L100 100L0 100Z" className={className || ""} />
+      <path d="M0 0H200L102 97L0 200V0Z" className={pathclassName} />
     </svg>
   );
 }
