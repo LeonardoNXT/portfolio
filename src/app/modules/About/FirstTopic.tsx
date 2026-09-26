@@ -16,7 +16,7 @@ export default function FirstTopic() {
         <Text
           font="font-aeonik"
           size="extra-large-size"
-          className="text-background pl-50! first-title"
+          className="text-background about-topic-title first-title"
         >
           Every layer — from{" "}
           <Text

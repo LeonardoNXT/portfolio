@@ -22,20 +22,26 @@ type Project = {
 function Header() {
   return (
     <div
-      className="w-full p-20! py-10! grid border-b border-(--primary-grid-color) "
+      className="w-full md:p-20! md:py-10! grid border-b border-(--primary-grid-color) projects-list-header"
       style={{
         gridTemplateColumns: "1fr 1fr 2fr",
       }}
     >
-      <Text font="font-necosmic" className="text-(--primary-grid-color)">
+      <Text
+        font="font-necosmic"
+        className="text-(--primary-grid-color) project-cell projects-list-heading"
+      >
         PROJECT NAME
       </Text>
-      <Text font="font-necosmic" className="text-(--primary-grid-color)">
+      <Text
+        font="font-necosmic"
+        className="text-(--primary-grid-color) project-cell projects-list-heading"
+      >
         SIDE
       </Text>
       <Text
         font="font-necosmic"
-        className="relative text-end text-(--primary-grid-color)"
+        className="relative text-end text-(--primary-grid-color) project-cell projects-list-heading"
       >
         STACK
       </Text>
@@ -59,16 +65,16 @@ function ListItem({ project, onHover }: ProjectsListProps) {
         if (!onHover || !itemRef.current) return;
         onHover.Out({});
       }}
-      className="w-full grid"
+      className="w-full grid projects-list-row"
       style={{ gridTemplateColumns: "1fr 1fr 2.0fr" }}
     >
-      <Text className="uppercase" size="small-size">
+      <Text className="uppercase project-cell" size="small-size">
         {project.name}
       </Text>
-      <Text className="uppercase" size="small-size">
+      <Text className="uppercase project-cell" size="small-size">
         {project.side}
       </Text>
-      <Text className="uppercase text-end text-nowrap" size="small-size">
+      <Text className="uppercase text-end project-cell" size="small-size">
         {project.stack}
       </Text>
     </div>
@@ -115,7 +121,7 @@ function List() {
   }, []);
 
   return (
-    <div className="p-20! flex flex-col gap-8 border-b border-(--primary-grid-color) relative cursor-pointer">
+    <div className="md:p-20! flex flex-col gap-8 border-b border-(--primary-grid-color) relative cursor-pointer projects-list">
       <div
         className="w-full left-1/2 -translate-x-1/2 h-6 rounded-full z-1 absolute bg-foreground mix-blend-difference pointer-events-none opacity-0"
         ref={isSelected}
@@ -130,11 +136,11 @@ function List() {
 
 function Other() {
   return (
-    <div className="w-full h-full p-20! py-10! flex items-center gap-5 justify-end cursor-pointer">
+    <div className="w-full h-full md:p-20! md:py-10! flex items-center gap-5 justify-end cursor-pointer projects-end">
       <Text size="normal-size" font="font-necosmic">
         Other Projects
       </Text>
-      <div className="w-15 aspect-square bg-white relative flex justify-center items-center overflow-hidden">
+      <div className="w-15 aspect-square bg-(--foreground) relative flex justify-center items-center overflow-hidden">
         <LinearBorder
           size={25}
           className="absolute right-0 top-0 rotate-90"

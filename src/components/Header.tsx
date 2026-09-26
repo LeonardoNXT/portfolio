@@ -1,37 +1,13 @@
-import { usePathname } from "next/navigation";
 import { RoundedBorder } from "./RoundedBorder";
 import Text from "./Text";
-import { menuOptions } from "@/utils/menu-options";
 import { useScroll } from "@/hooks/useScroll";
 import gsap from "gsap";
 import { useRef } from "react";
+import SiteNavigation from "./SiteNavigation";
 
 type ConteinerPropsType = {
   children: React.ReactNode;
 };
-
-function Nav() {
-  const pathname = usePathname();
-  return (
-    <nav className="absolute hidden md:flex opacity-0 md:opacity-100 top-5 right-5 p-2! rounded-b-none rounded-3xl rounded-r-3xl! bg-white gap-2.5 font-necosmic font-extralight">
-      <div className="aspect-square w-auto h-max flex flex-1">
-        <button className="h-[33] bg-(--primary-color) rounded-full aspect-square"></button>
-      </div>
-      {menuOptions.map((options, i) => {
-        const isActive = pathname === options.href;
-
-        return (
-          <button
-            key={i}
-            className={` px-4! py-1.5! text-[14px] rounded-full ${isActive ? "bg-(--primary-color) text-(--menu-primary-color)" : "text-black bg-(--menu-no-active)"}`}
-          >
-            {options.route}
-          </button>
-        );
-      })}
-    </nav>
-  );
-}
 
 function Conteiner({ children }: ConteinerPropsType) {
   return (
@@ -139,7 +115,7 @@ function Notch() {
 
 const Header = {
   Notch: Notch,
-  Nav: Nav,
+  Nav: SiteNavigation,
   Conteiner: Conteiner,
 };
 

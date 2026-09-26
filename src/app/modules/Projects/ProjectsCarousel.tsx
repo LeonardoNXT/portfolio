@@ -97,7 +97,7 @@ export default function ProjectsCarousel() {
   const router = useRouter();
   return (
     <div
-      className="w-screen py-25! h-screen overflow-x-hidden relative"
+      className="w-screen md:py-25! h-screen overflow-x-hidden relative projects-carousel"
       ref={carousel}
     >
       <div className="w-full absolute top-0 left-0 h-screen">
@@ -116,7 +116,7 @@ export default function ProjectsCarousel() {
         />
       </div>
       <div
-        className="w-auto absolute top-1/2 place-items-center left-0 carousel -translate-y-1/2 h-full grid gap-2.5 "
+        className="w-auto absolute top-1/2 place-items-center left-0 carousel -translate-y-1/2 h-full grid gap-2.5 projects-carousel-track"
         style={{
           gridTemplateColumns: "repeat(9, 700px)",
         }}

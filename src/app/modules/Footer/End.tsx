@@ -18,7 +18,7 @@ export default function End() {
         pathclassName="fill-background"
       />
       <LinearBorder size={10} className="absolute top-0 left-2.5" />
-      <div className="w-full p-20! flex justify-between items-center relative">
+      <div className="w-full flex justify-between items-center relative footer-end-content">
         <Text size="mid-size" className="text-background max-w-1/4">
           Let’s work on something that matters.
         </Text>
@@ -43,10 +43,10 @@ export default function End() {
         </Text>
         <div className="w-full h-px absolute bottom-0 left-0 bg-background opacity-29"></div>
       </div>
-      <div className="w-full h-85 relative overflow-hidden">
+      <div className="w-full h-85 relative overflow-hidden footer-mark">
         <Text
           font="font-necosmic"
-          className="text-[46vw]! text-background leading-225 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3"
+          className="text-background leading-225 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3"
         >
           LEO
         </Text>
