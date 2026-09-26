@@ -1,0 +1,250 @@
+.root {
+  font-family: var(--font-aeonik);
+  color: var(--foreground);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  padding-bottom: calc(8rem + env(safe-area-inset-bottom));
+  background: var(--background);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s, background 0.4s;
+}
+
+.root[data-open="true"] .overlay {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.brand {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.brand > p { white-space: nowrap; }
+.brand > span { color: color-mix(in srgb, var(--foreground) 55%, transparent); }
+.details, .signature { display: none; }
+
+.links {
+  display: flex;
+  flex-direction: column;
+  padding-block: clamp(3rem, 10svh, 6rem) 1rem;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  padding-block: 1.25rem;
+  text-decoration: none;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--primary-grid-color);
+  transform: translateY(1.5rem);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), color 0.25s;
+}
+
+.root[data-open="true"] .menuLink { transform: translateY(0); }
+.root[data-open="true"] .menuLink:nth-child(2) { transition-delay: 0.04s; }
+.root[data-open="true"] .menuLink:nth-child(3) { transition-delay: 0.08s; }
+
+.linkName {
+  font-weight: 400;
+  font-size: clamp(2.75rem, 11vw, 6rem);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+  overflow-wrap: anywhere;
+}
+
+.linkIndex {
+  align-self: flex-end;
+  margin-left: auto;
+  padding-bottom: 0.5rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+}
+
+.linkArrow {
+  display: none;
+  flex-shrink: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock {
+  position: fixed;
+  z-index: 70;
+  left: 50%;
+  bottom: max(2rem, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--primary-grid-color);
+  border-radius: 1rem;
+  background: var(--background);
+}
+
+.dockButton {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--primary-grid-color);
+  border-radius: 0.75rem;
+  color: var(--foreground);
+  background: var(--background);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.dockButton:hover {
+  background: color-mix(in srgb, var(--foreground) 8%, var(--background));
+  border-color: color-mix(in srgb, var(--foreground) 45%, var(--primary-grid-color));
+}
+
+.root a:focus-visible,
+.dockButton:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 5px;
+}
+
+.menuIcon { position: relative; width: 18px; height: 16px; }
+.menuIcon > span {
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.menuIcon > span:first-child { transform: translateY(-6px); }
+.menuIcon > span:last-child { transform: translateY(6px); }
+.root[data-open="true"] .menuIcon > span:first-child { transform: rotate(45deg); }
+.root[data-open="true"] .menuIcon > span:nth-child(2) { opacity: 0; }
+.root[data-open="true"] .menuIcon > span:last-child { transform: rotate(-45deg); }
+
+@media (min-width: 1024px) and (min-height: 650px) {
+  .overlay {
+    display: grid;
+    grid-template-columns: minmax(18rem, 32%) minmax(0, 1fr);
+    gap: 2vw;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .identity {
+    justify-content: space-between;
+    padding: clamp(2rem, 4vw, 5rem);
+    padding-right: 0;
+    padding-bottom: 4rem;
+  }
+
+  .brand { flex-direction: column; gap: 1.25rem; }
+  .brand > p { font-size: 1.125rem; }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: clamp(0.75rem, 1vw, 0.9375rem);
+    line-height: 1.6;
+  }
+  .details a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid var(--primary-grid-color);
+    padding-bottom: 0.75rem;
+  }
+  .availability { max-width: 12rem; }
+  .signature {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: color-mix(in srgb, var(--foreground) 40%, transparent);
+  }
+
+  .menuPanel { position: relative; min-width: 0; min-height: 0; }
+  .menuPanel::before, .menuPanel::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    z-index: 2;
+    height: 20%;
+    pointer-events: none;
+  }
+  .menuPanel::before { top: 0; background: linear-gradient(var(--background), transparent); }
+  .menuPanel::after { bottom: 0; background: linear-gradient(transparent, var(--background)); }
+  .scrollArea {
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+  }
+  .scrollArea::-webkit-scrollbar { display: none; }
+  .links { padding: 28svh clamp(2rem, 4vw, 5rem) 28svh 0; }
+  .menuLink {
+    position: relative;
+    justify-content: flex-end;
+    min-height: 33svh;
+    padding: 1rem 2rem 1rem 0;
+    border: 0;
+    color: color-mix(in srgb, var(--foreground) 28%, var(--background));
+  }
+  .menuLink[data-active="true"], .menuLink:hover, .menuLink:focus-visible { color: var(--foreground); }
+  .linkName { font-size: clamp(5rem, 9vw, 12rem); line-height: 1.05; }
+  .linkIndex { position: absolute; right: 0; bottom: 22%; margin: 0; padding: 0; }
+  .linkArrow {
+    position: absolute;
+    display: flex;
+    right: 0.5rem;
+    width: clamp(3rem, 5vw, 6rem);
+    aspect-ratio: 1;
+    opacity: 0;
+    transform: translateX(-1rem);
+    transition: opacity 0.25s, transform 0.25s;
+    background: color-mix(in srgb, var(--background) 85%, transparent);
+  }
+  .linkArrow svg { width: 35%; height: 35%; }
+  .menuLink:hover .linkArrow, .menuLink:focus-visible .linkArrow { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-height: 550px) and (max-width: 1023px) {
+  .links { padding-top: 1.5rem; }
+  .linkName { font-size: clamp(2rem, 8vw, 3.5rem); }
+  .menuLink { padding-block: 0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay, .menuLink, .linkArrow, .menuIcon > span { transition: none; }
+}

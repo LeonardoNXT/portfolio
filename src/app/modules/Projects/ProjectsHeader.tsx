@@ -3,7 +3,7 @@ import Text from "@/components/Text";
 
 export default function ProjectHeader() {
   return (
-    <div className="p-15! w-full flex justify-between items-center">
+    <div className="md:p-15! w-full flex justify-between items-center projects-header">
       <div className="w-[30%]">
         <Text size="fifty-size" font="font-necosmic" className="title">
           Projects

@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 
 type SectionPropsType = {
+  id?: string;
   style?: React.StyleHTMLAttributes<HTMLDivElement>;
   classname?: string;
   children: React.ReactNode;

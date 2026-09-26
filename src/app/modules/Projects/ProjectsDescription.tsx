@@ -2,7 +2,7 @@ import Text from "@/components/Text";
 
 export default function ProjectsDescription() {
   return (
-    <div className="p-15! w-1/2">
+    <div className="md:p-15! w-1/2 projects-description">
       <Text
         size="fifty-size"
         font="font-aeonik"

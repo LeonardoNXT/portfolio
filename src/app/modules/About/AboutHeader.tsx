@@ -2,8 +2,8 @@ import Text from "@/components/Text";
 
 export default function AboutHeader() {
   return (
-    <div className="w-full flex justify-between header">
-      <div className="w-1/2 flex gap-10 items-center pl-50!">
+    <div className="w-full flex justify-between header about-header">
+      <div className="w-1/2 flex gap-10 items-center about-header-intro">
         <Text
           size="fifty-size"
           font="font-canopee"
@@ -19,8 +19,8 @@ export default function AboutHeader() {
           This is where it becomes more explicit.
         </Text>
       </div>
-      <div className="w-1/2 flex border-b border-background justify-between">
-        <div className="flex justify-between items-center w-1/2">
+      <div className="w-1/2 flex border-b border-background justify-between about-header-meta">
+        <div className="flex justify-between items-center w-1/2 about-header-notes">
           <Text
             size="small-size"
             font="font-aeonik"
@@ -36,7 +36,7 @@ export default function AboutHeader() {
             LET ME SHOW YOU A LITTLE ABOUT ME
           </Text>
         </div>
-        <div className="w-1/2 flex justify-end items-center about">
+        <div className="w-1/2 flex justify-end items-center about about-header-title">
           <Text
             size="fifty-size"
             font="font-necosmic"

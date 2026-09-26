@@ -13,9 +13,9 @@ export default function SecondTopic() {
           This is where it takes form.
         </Text>
       </div>
-      <div className="w-full my-20! flex justify-between p-10!">
-        <div className="w-[30%] h-full relative">
-          <div className="w-50 aspect-square bg-background  rounded-4xl rounded-r-none rounded-t-4xl! shape-1"></div>
+      <div className="w-full flex justify-between about-second-topic">
+        <div className="w-[30%] h-full relative about-second-shapes">
+          <div className="w-50 aspect-square bg-background shape-1"></div>
           <RoundedBorder
             size={50}
             className="fill-background absolute left-50 -translate-x-full rotate-180"
@@ -26,13 +26,13 @@ export default function SecondTopic() {
             className="fill-background absolute left-50 -translate-y-full"
           />
         </div>
-        <div className="w-[70%]">
+        <div className="w-[70%] about-second-content">
           <div className="w-full flex justify-end">
             <div className="w-[80%]">
               <Text
                 font="font-aeonik"
                 size="extra-large-size"
-                className="text-background text-justify w-[95%] second-title"
+                className="text-background text-justify w-[95%] about-second-title second-title"
               >
                 In practice, this means designing and building{" "}
                 <Text type="span" size="extra-large-size" font="font-migra">
@@ -49,11 +49,11 @@ export default function SecondTopic() {
               </Text>
             </div>
           </div>
-          <div className="pl-25!">
+          <div className="about-second-subtitle-wrap">
             <Text
               font="font-aeonik"
               size="small-size"
-              className="text-background uppercase mt-3! w-[30%] text-justify second-subTitle"
+              className="text-background uppercase mt-3! w-[30%] text-justify about-second-subtitle second-subTitle"
             >
               whether through REST, messaging patterns, or event-driven
               workflows.

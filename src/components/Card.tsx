@@ -64,7 +64,7 @@ export default function Card({
       <Text
         font="font-necosmic"
         size="mid-size"
-        className="mix-blend-difference absolute top-1/2 left-1/2 -translate-1/2 text-nowrap"
+        className="mix-blend-difference text-white absolute top-1/2 left-1/2 -translate-1/2 text-nowrap"
       >
         {name}
       </Text>

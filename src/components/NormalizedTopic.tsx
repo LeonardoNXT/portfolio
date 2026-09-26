@@ -32,9 +32,9 @@ export default function NormalizedTopic({
           {resume}
         </Text>
       </div>
-      <div className={"w-[70%] my-20!"}>
+      <div className={"w-[70%] about-topic"}>
         {title}
-        <div className="w-full flex justify-end">
+        <div className="lg:w-full flex justify-end">
           <Text
             font="font-aeonik"
             size="small-size"

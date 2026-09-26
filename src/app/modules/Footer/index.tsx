@@ -7,7 +7,7 @@ import End from "./End";
 
 export default function Footer() {
   return (
-    <Section.Element classname="bg-(--primary-color)">
+    <Section.Element id="contacts" classname="bg-(--primary-color)">
       <Grid className="border-(--primary-grid-color) opacity-20" />
       <Section.Conteiner>
         <KnowMoreAbout />

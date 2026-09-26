@@ -3,7 +3,7 @@ import Text from "@/components/Text";
 
 export default function KnowMoreAbout() {
   return (
-    <div className="w-full py-50! flex justify-center relative">
+    <div className="w-full md:py-50! flex justify-center relative footer-know-more">
       <LinearBorder
         size={50}
         className="absolute left-2.5 bottom-0 -rotate-90"

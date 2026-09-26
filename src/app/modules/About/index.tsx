@@ -24,8 +24,8 @@ export default function About() {
     { scope: sectionRef },
   );
   return (
-    <Section.Element classname="pt-10!" ref={sectionRef}>
-      <div className="absolute z-20">
+    <Section.Element id="about" classname="pt-10! about-section" ref={sectionRef}>
+      <div className="absolute z-20 about-corner">
         <LinearBorder
           size={200}
           pathclassName="absolute top-20 fill-background"
@@ -33,7 +33,7 @@ export default function About() {
       </div>
 
       <Section.Conteiner classname="conteiner">
-        <div className="w-full pt-25! p-10! bg-(--primary-color)">
+        <div className="w-full bg-(--primary-color) px-5! about-shell">
           <AboutHeader />
           <FirstTopic />
           <Divisor />
@@ -43,7 +43,7 @@ export default function About() {
         </div>
       </Section.Conteiner>
 
-      <div className="absolute bottom-0 rotate-180 right-0 z-20">
+      <div className="absolute bottom-0 rotate-180 right-0 z-20 about-corner">
         <LinearBorder size={200} pathclassName="absolute fill-background" />
       </div>
     </Section.Element>

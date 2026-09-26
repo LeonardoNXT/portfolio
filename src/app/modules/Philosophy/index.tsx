@@ -30,7 +30,7 @@ export default function Philosophy() {
           I focus on structure, not shortcuts — building systems that are clear,
           maintainable, and designed to evolve.
         </Text>
-        <div className="w-1/2 flex flex-col md:flex-row gap-5 justify-between">
+        <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-5 justify-between">
           <Text
             size="normal-size"
             font="font-aeonik"

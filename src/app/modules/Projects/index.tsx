@@ -28,7 +28,7 @@ export default function Projects() {
   );
 
   return (
-    <Section.Element ref={sectionRef}>
+    <Section.Element id="projects" ref={sectionRef}>
       <Grid className="border-(--primary-grid-color)" />
       <GradientOpacity color="background" position="top" className="z-10" />
       <Section.Conteiner>

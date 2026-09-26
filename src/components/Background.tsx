@@ -279,12 +279,46 @@ const Grainient: React.FC<GrainientProps> = ({
 };
 
 function Gradient() {
+  const [theme, setTheme] = React.useState<"light" | "dark">("light");
+
+  React.useEffect(() => {
+    const html = document.documentElement;
+
+    const updateTheme = () => {
+      setTheme(html.dataset.theme === "dark" ? "dark" : "light");
+    };
+
+    updateTheme();
+
+    const observer = new MutationObserver(updateTheme);
+
+    observer.observe(html, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const colors =
+    theme === "dark"
+      ? {
+          color1: "#d3ff41",
+          color2: "#333333",
+          color3: "#d3ff41",
+        }
+      : {
+          color1: "#ffffff",
+          color2: "#6441ff",
+          color3: "#ffffff",
+        };
+
   return (
     <div className="absolute z-1 top-0 left-0 w-full h-full">
       <Grainient
-        color1="#000000"
-        color2="#fea86c"
-        color3="#592727"
+        color1={colors.color1}
+        color2={colors.color2}
+        color3={colors.color3}
         timeSpeed={1.35}
         colorBalance={0}
         warpStrength={1}

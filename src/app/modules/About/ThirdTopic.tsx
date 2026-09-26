@@ -13,7 +13,7 @@ export default function ThirdTopic() {
         <Text
           font="font-aeonik"
           size="extra-large-size"
-          className="text-background pl-50! third-title"
+          className="text-background about-topic-title third-title"
         >
           I work primarily with JavaScript and{" "}
           <Text type="span" size="extra-large-size" font="font-migra">
